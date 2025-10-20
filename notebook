@@ -1,0 +1,46 @@
+import secrets
+import string
+
+
+def make_password(length: int) -> str:
+    """Generate a cryptographically strong random password.
+
+    The password will include at least one lowercase letter, one uppercase letter,
+    one digit and one symbol. No external dependencies are required.
+
+    Args:
+        length: Total length of the password. Must be >= 8.
+
+    Returns:
+        A random password string of the requested length.
+
+    Raises:
+        ValueError: If length is less than 8.
+    """
+    if length < 8:
+        raise ValueError("length must be at least 8")
+
+    pools = [
+        string.ascii_lowercase,
+        string.ascii_uppercase,
+        string.digits,
+        string.punctuation,
+    ]
+
+    # Guarantee at least one character from each required category
+    password_chars = [secrets.choice(pool) for pool in pools]
+
+    all_chars = "".join(pools)
+    for _ in range(length - len(password_chars)):
+        password_chars.append(secrets.choice(all_chars))
+
+    # Fisher–Yates shuffle using secrets.randbelow for cryptographic randomness
+    for i in range(len(password_chars) - 1, 0, -1):
+        j = secrets.randbelow(i + 1)
+        password_chars[i], password_chars[j] = password_chars[j], password_chars[i]
+
+    return "".join(password_chars)
+
+
+if __name__ == "__main__":
+    print(make_password(12))
