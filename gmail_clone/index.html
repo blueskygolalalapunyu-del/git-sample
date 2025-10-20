@@ -3,97 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gmail風 UI - サンプル</title>
+  <title>うめきち Crypto Beginner's</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="logo">Gmail</div>
-      <button class="compose">作成</button>
-      <nav class="nav">
-        <ul>
-          <li class="active">受信トレイ</li>
-          <li>スター付き</li>
-          <li>送信済み</li>
-          <li>下書き</li>
-          <li>購入</li>
-        </ul>
-      </nav>
-      <div class="labels">
-        <h4>ラベル</h4>
-        <ul>
-          <li>仕事</li>
-          <li>個人</li>
-          <li>旅行</li>
-        </ul>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-main">うめきち</span>
+      <span class="brand-sub">Crypto Beginner's</span>
+    </div>
+    <nav class="social-links" aria-label="ソーシャルリンク">
+      <a href="#" aria-label="Twitter"><span aria-hidden="true">🐦</span></a>
+      <a href="#" aria-label="Instagram"><span aria-hidden="true">📸</span></a>
+      <a href="#" aria-label="検索"><span aria-hidden="true">🔍</span></a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero-grid" aria-label="注目記事">
+      <article class="hero-card">
+        <p class="badge">仮想通貨 (暗号資産)</p>
+        <h2>送金手数料がひとめでわかる</h2>
+        <p class="note">ビギナー向けに主要通貨の送金コストを比較。</p>
+      </article>
+      <article class="hero-card">
+        <p class="badge">2025最新版</p>
+        <h2>取引所キャンペーンまとめ</h2>
+        <p class="note">今狙いたい特典・条件を一挙にチェック。</p>
+      </article>
+      <article class="hero-card">
+        <p class="badge">ウォレット</p>
+        <h2>Metamask 完全ガイド</h2>
+        <p class="note">初期設定からセキュリティ対策まで写真付きで解説。</p>
+      </article>
+      <article class="hero-card">
+        <p class="badge">New</p>
+        <h2>取引所の選び方・比較</h2>
+        <p class="note">主要 5 社を手数料・サポート体制で比較。</p>
+      </article>
+    </section>
+
+    <section class="tabs" aria-label="カテゴリ">
+      <button class="tab active" data-target="latest">最新記事</button>
+      <button class="tab" data-target="crypto">仮想通貨</button>
+      <button class="tab" data-target="metamask">メタマスク</button>
+      <button class="tab" data-target="exchange">取引所</button>
+    </section>
+
+    <section class="content">
+      <div class="article-list active" id="latest" aria-label="最新記事の一覧">
+        <article class="article-card">
+          <span class="category">仮想通貨講座</span>
+          <h3>イーサリアムは本当にオワコンなのか？9つの理由から考察</h3>
+          <p class="excerpt">※この記事は一部プロモーション広告を含みます。イーサリアムは本当にオワコンなのか？気になる方に向けて、背景や最新トレンドを丁寧に整理しました。</p>
+          <time datetime="2025-02-19">2025年2月19日</time>
+        </article>
+        <article class="article-card">
+          <span class="category">仮想通貨講座</span>
+          <h3>今からドージコインで億り人は可能？将来性・注意点・買い方まで完全ガイド</h3>
+          <p class="excerpt">ドージコインの歴史から価格推移、税金・リスク管理までまとめた入門者向けの決定版です。</p>
+          <time datetime="2025-01-30">2025年1月30日</time>
+        </article>
       </div>
-    </aside>
 
-  <main class="main">
-      <header class="topbar">
-        <div class="left">
-          <button class="menu">☰</button>
-          <h1>受信トレイ</h1>
-        </div>
-        <div class="right">
-          <input class="search" placeholder="メールを検索" />
-          <button class="profile">😊</button>
-        </div>
-      </header>
-
-      <section class="toolbar">
-        <div class="toolbar-left">
-          <input type="checkbox" />
-          <button>更新</button>
-        </div>
-        <div class="toolbar-right">1-50 / 582</div>
-      </section>
-
-  <section class="emails" id="emails">
-        <!-- サンプルメール行 -->
-        <div class="email unread">
-          <input type="checkbox" />
-          <div class="star">☆</div>
-          <div class="from">ランサーズ事務局</div>
-          <div class="subject">【今すぐ視聴可能！】AI動開発がテーマの大人気ウェビナー</div>
-          <div class="time">10:11</div>
-        </div>
-
-        <div class="email">
-          <input type="checkbox" />
-          <div class="star">☆</div>
-          <div class="from">Kawaguchi Masahiro .</div>
-          <div class="subject">『Untitled』の共有リクエスト</div>
-          <div class="time">8:54</div>
-        </div>
-
-        <div class="email">
-          <input type="checkbox" />
-          <div class="star">☆</div>
-          <div class="from">JAC Recruitment求人メル.</div>
-          <div class="subject">おすすめ求人のご紹介です</div>
-          <div class="time">10月19日</div>
-        </div>
-
-        <!-- さらに行を追加 -->
-      </section>
-    </main>
-
-    <!-- 詳細ペイン -->
-    <aside class="detail" id="detail">
-      <div class="detail-header">
-        <button id="detail-close">✕</button>
-        <h3 id="detail-from">送信者</h3>
-        <div id="detail-time">時間</div>
+      <div class="article-list" id="crypto" aria-label="仮想通貨カテゴリの一覧">
+        <article class="article-card">
+          <span class="category">基礎知識</span>
+          <h3>はじめてのビットコイン：買い方と保管方法を総まとめ</h3>
+          <p class="excerpt">口座開設から購入、ウォレット選びまで図解で解説します。</p>
+          <time datetime="2024-12-01">2024年12月1日</time>
+        </article>
+        <article class="article-card">
+          <span class="category">基礎知識</span>
+          <h3>ALTSってなに？聞き慣れないアルトコインをやさしく解説</h3>
+          <p class="excerpt">ボラティリティの高さと活用シーンを初心者にもわかりやすく。</p>
+          <time datetime="2024-11-18">2024年11月18日</time>
+        </article>
       </div>
-      <div class="detail-body">
-        <h4 id="detail-subject">件名</h4>
-        <p id="detail-content">ここにメール本文のダミーテキストが入ります。</p>
+
+      <div class="article-list" id="metamask" aria-label="メタマスクカテゴリの一覧">
+        <article class="article-card">
+          <span class="category">ウォレット</span>
+          <h3>初めてのMetamask：セットアップ手順と注意点</h3>
+          <p class="excerpt">インストールから秘密鍵の管理まで、スクリーンショット付きでフォローします。</p>
+          <time datetime="2024-10-05">2024年10月5日</time>
+        </article>
+        <article class="article-card">
+          <span class="category">ウォレット</span>
+          <h3>Metamaskのガス代節約テクニック 5 選</h3>
+          <p class="excerpt">トランザクションを効率化する設定やタイミングのコツ。</p>
+          <time datetime="2024-09-22">2024年9月22日</time>
+        </article>
       </div>
-    </aside>
-    </main>
-  </div>
+
+      <div class="article-list" id="exchange" aria-label="取引所カテゴリの一覧">
+        <article class="article-card">
+          <span class="category">取引所</span>
+          <h3>国内主要取引所 5 社を比較：手数料・サポート・セキュリティ</h3>
+          <p class="excerpt">GMOコイン・bitFlyerなど人気の取引所を徹底比較します。</p>
+          <time datetime="2024-08-12">2024年8月12日</time>
+        </article>
+        <article class="article-card">
+          <span class="category">取引所</span>
+          <h3>キャンペーンをフル活用する口座開設チェックリスト</h3>
+          <p class="excerpt">口座開設前に確認したい本人確認書類や入金方法をまとめました。</p>
+          <time datetime="2024-07-28">2024年7月28日</time>
+        </article>
+      </div>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h4>最近の投稿</h4>
+          <ul>
+            <li><a href="#">イーサリアムは本当にオワコンなのか？9つの理由から考察</a></li>
+            <li><a href="#">今からドージコインで億り人は可能？将来性・注意点・買い方まで完全ガイド</a></li>
+            <li><a href="#">cBridgeとは？特徴・ブリッジ方法・注意点を徹底解説</a></li>
+            <li><a href="#">ソラナの将来性は？価格予測と投資戦略</a></li>
+            <li><a href="#">【手数料無料】GMOコインからMetamaskへETHを送金する方法</a></li>
+          </ul>
+        </div>
+        <div class="widget highlight">
+          <h4>はじめての方へ</h4>
+          <p>仮想通貨が初めての方でも迷わないよう、ステップバイステップで解説しています。</p>
+          <a class="button" href="#">入門ガイドを読む</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 うめきち Crypto Beginner's</small>
+  </footer>
 
   <script src="script.js"></script>
 </body>
