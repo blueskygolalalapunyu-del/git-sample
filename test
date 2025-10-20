@@ -1,0 +1,3 @@
+massage = "Great just isn't good enough."
+words = massage.split()
+words
