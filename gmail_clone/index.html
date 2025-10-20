@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gmail風 UI - サンプル</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">Gmail</div>
+      <button class="compose">作成</button>
+      <nav class="nav">
+        <ul>
+          <li class="active">受信トレイ</li>
+          <li>スター付き</li>
+          <li>送信済み</li>
+          <li>下書き</li>
+          <li>購入</li>
+        </ul>
+      </nav>
+      <div class="labels">
+        <h4>ラベル</h4>
+        <ul>
+          <li>仕事</li>
+          <li>個人</li>
+          <li>旅行</li>
+        </ul>
+      </div>
+    </aside>
+
+  <main class="main">
+      <header class="topbar">
+        <div class="left">
+          <button class="menu">☰</button>
+          <h1>受信トレイ</h1>
+        </div>
+        <div class="right">
+          <input class="search" placeholder="メールを検索" />
+          <button class="profile">😊</button>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <div class="toolbar-left">
+          <input type="checkbox" />
+          <button>更新</button>
+        </div>
+        <div class="toolbar-right">1-50 / 582</div>
+      </section>
+
+  <section class="emails" id="emails">
+        <!-- サンプルメール行 -->
+        <div class="email unread">
+          <input type="checkbox" />
+          <div class="star">☆</div>
+          <div class="from">ランサーズ事務局</div>
+          <div class="subject">【今すぐ視聴可能！】AI動開発がテーマの大人気ウェビナー</div>
+          <div class="time">10:11</div>
+        </div>
+
+        <div class="email">
+          <input type="checkbox" />
+          <div class="star">☆</div>
+          <div class="from">Kawaguchi Masahiro .</div>
+          <div class="subject">『Untitled』の共有リクエスト</div>
+          <div class="time">8:54</div>
+        </div>
+
+        <div class="email">
+          <input type="checkbox" />
+          <div class="star">☆</div>
+          <div class="from">JAC Recruitment求人メル.</div>
+          <div class="subject">おすすめ求人のご紹介です</div>
+          <div class="time">10月19日</div>
+        </div>
+
+        <!-- さらに行を追加 -->
+      </section>
+    </main>
+
+    <!-- 詳細ペイン -->
+    <aside class="detail" id="detail">
+      <div class="detail-header">
+        <button id="detail-close">✕</button>
+        <h3 id="detail-from">送信者</h3>
+        <div id="detail-time">時間</div>
+      </div>
+      <div class="detail-body">
+        <h4 id="detail-subject">件名</h4>
+        <p id="detail-content">ここにメール本文のダミーテキストが入ります。</p>
+      </div>
+    </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
